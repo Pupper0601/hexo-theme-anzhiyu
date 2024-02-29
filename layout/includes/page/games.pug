@@ -1,0 +1,35 @@
+#games
+  each i in site.data.games
+    .author-content.author-content-item.gamesPage.single(style=`background: url(${i.top_background}) left 37% / cover no-repeat !important;`)
+      .card-content
+        .author-content-item-tips= i.class_name
+        span.author-content-item-title= i.description
+        .content-bottom
+          .tips= i.tip
+        .games-card
+          img.card-img(src= i.games_card)
+        .banner-button-group
+          a.banner-button(href= i.buttonLink)
+            i.anzhiyufont.anzhiyu-icon-arrow-circle-right(style='font-size: 1.3rem')
+            span.banner-button-text= i.buttonText
+    each item in i.games.concat(i.steam)
+      .games-item
+        h2.games-title= item.title
+        .team-item-description= item.description
+        .games-item
+          .games-item-content
+            each iten, index in item.games_list
+              .games-game
+                a.game-img(href=iten.link)
+                  img(src= iten.img, alt= iten.name)
+                span.game-name= iten.name
+                  span.en-name= iten.en_name
+                .play-time
+                  span.total-time 总游戏时间
+                    span= iten.totalTime
+                  span.last-time 最后运行日期
+                    span= iten.lastTime
+                .game-achievement
+                  span.achievement-text 成就
+                  span.achievement-num= iten.num
+                  .progress(style=`width: ${iten.achievement}`)

@@ -1,0 +1,11 @@
+if theme.view.enable !== false
+	.wl-reaction
+		hr
+		.wl-reaction-title= theme.view.title
+		ul.wl-reaction-list
+			each image in theme.view.images
+				li.wl-reaction-item
+					.wl-reaction-img
+						img(src=image.src, alt=image.text)
+						.wl-reaction-votes 0
+					.wl-reaction-text= image.text

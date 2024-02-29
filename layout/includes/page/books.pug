@@ -1,0 +1,26 @@
+#books
+  if site.data.books
+    each i in site.data.books
+      .author-content.author-content-item.fcirclePage.single(style = `background: url(${i.top_background}) left 37% / cover no-repeat !important;`)
+        .card-content
+          .author-content-item-tips=i.class_name
+          span.author-content-item-title=i.description
+          .content-bottom
+            .tips=i.tip
+      each item in i.book_list 
+        .card_box(title=`${item.name}`, referrerpolicy='no-referrer', style=`background-image: url(${item.image}); width:200px; height:275px;`)
+          .card_mask
+            span=item.description
+            a(target='_blank', rel='noopener', href=item.link) 查看详情
+          .card_top
+            i.fa-solid.fa-book-open
+            span=item.type
+          .card_content
+            span=item.name
+            div
+              - for (let i = 0; i < Math.floor(item.level); i++)
+                i.fa-solid.fa-star
+              - if (item.level - Math.floor(item.level) != 0) 
+                i.fa-solid.fa-star-half-alt
+
+

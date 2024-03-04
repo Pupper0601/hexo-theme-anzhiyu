@@ -85,7 +85,7 @@ social:
 author_status:
   enable: true
   # 可以是任何图片，建议放表情包或者emoji图片，效果都很好，[表情包速查](https://emotion.xiaokang.me/)
-  statusImg: "https://cdn.jsdelivr.net/gh/zhheo/Sticker-Heo@latest/Sticker-100/菜狗.png"
+  statusImg: "https://cdn.cbd.int/sticker-heo@2022.7.5/Sticker-100/送福.png"
   skills:
     - 🤖️ 数码科技爱好者
     - 🔍 分享与热心帮助
@@ -189,7 +189,7 @@ error_404:
 
 post_meta: # 文章页面配置
   page: # Home Page
-    date_type: both # created or updated or both 主页文章日期是创建日或者更新日或都显示
+    date_type: updated # created or updated or both 主页文章日期是创建日或者更新日或都显示
     date_format: relative # date/relative/simple 显示日期还是相对日期 或者 简单日期
     categories: true # true or false 主页是否显示分类
     tags: true # true or false 主页是否显示标籤
@@ -350,7 +350,7 @@ comments:
   # 如果将其设置为true，则评论计数将无效
   lazyload: false
   count: true # 在top_img中显示注释计数
-  card_post_count: true # 在首页显示评论计数
+  card_post_count: false # 在首页显示评论计数
 
 # valine
 # https://valine.js.org
@@ -686,9 +686,9 @@ site_verification:
 
 theme_color:
   enable: true
-  main: "#425AEF"
+  main: "#0a6e65"
   dark_main: "#f2b94b"
-  paginator: "#425AEF"
+  paginator: "#0a6e65"
   #   button_hover: "#FF7242"
   text_selection: "#2128bd"
   link_color: "var(--anzhiyu-fontcolor)"
@@ -696,9 +696,9 @@ theme_color:
   hr_color: "#4259ef23"
   code_foreground: "#fff"
   code_background: "var(--anzhiyu-code-stress)"
-  toc_color: "#425AEF"
-  #   blockquote_padding_color: "#425AEF"
-  #   blockquote_background_color: "#425AEF"
+  toc_color: "#0a6e65"
+  #   blockquote_padding_color: "#0a6e65"
+  #   blockquote_background_color: "#0a6e65"
   scrollbar_color: "var(--anzhiyu-scrollbar)"
   meta_theme_color_light: "#f7f9fe"
   meta_theme_color_dark: "#18171d"
@@ -863,7 +863,7 @@ preloader:
   source: 3
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
-  avatar: https://img.pupper.cn/img/1693303928.png #自定义头像
+  avatar: https://img.pupper.cn/img/202307151348675.png #自定义头像
 
 # aside (侧边栏)
 # --------------------------------------
@@ -1075,7 +1075,7 @@ aplayerInject:
 snackbar:
   enable: true
   position: top-center
-  bg_light: "#425AEF" # The background color of Toast Notification in light mode
+  bg_light: "#0a6e65" # The background color of Toast Notification in light mode
   bg_dark: "#1f1f1f" # The background color of Toast Notification in dark mode
 
 # https://instant.page/
@@ -1280,7 +1280,7 @@ linkPageTop:
   enable: true
   title: 与数百名博主无限进步
   # 添加博主友链的评论自定义格式
-  addFriendPlaceholder: "昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到我自己的图床）：\n描述：\n站点截图（可选）：\n"
+  addFriendPlaceholder: ""
 
 # 缩略图后缀 archive/tag/category 页面单独开启后缀
 pageThumbnailSuffix: ""
@@ -1310,27 +1310,20 @@ dynamicEffect:
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    # 自定义css
-    # - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
-    - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
-    - <link rel="stylesheet" href="/css/algolia-search.css" media="defer" onload="this.media='all'">
     # view
-    - <link rel="stylesheet" href="/css/view.css" media="defer" onload="this.media='all'">
-    - <script async src="/js/view.js"></script>
+    - <script defer src="/js/view.js"></script>
 
   bottom:
     # 自定义js
     # - <script src="/js/xxx"></script>
-    - <script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script> # jQuery
-    - <script src="/js/notice.js"></script> # 公告栏
+    - <script defer src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script> # jQuery
+    - <script defer src="/js/notice.js"></script> # 公告栏
 
     # 特殊日期倒计时
-    - <script async src="/js/specialDay.js"></script>
-    - <script async data-pjax src="https://cdn.wpon.cn/2022-sucai/Gold-ingot.js"></script> # 新年元宝
+    - <script defer src="/js/specialDay.js"></script>
+    - <script defer src="https://cdn.wpon.cn/2022-sucai/Gold-ingot.js"></script> # 新年元宝
     # 音乐馆
-    - <script async src="/js/Meting2.min.js"></script>
-    # view
-    # - <script async src="/js/view.js"></script>
+    - <script defer src="/js/Meting2.min.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work

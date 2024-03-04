@@ -1,0 +1,587 @@
+/* 公告栏 */
+#aside-content .item-headline{
+    display: none;
+}
+
+.announcement_content {
+    font-size: 0.6rem;
+}
+
+.announcement_content center {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.announcement_content span:nth-child(2) {
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-weight: 700;
+    color: #eb3b0f;
+    padding: 0px 5px;
+}
+
+.announcement_content span:nth-child(3) {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #944da8;
+    padding: 0px 0px;
+}
+
+.announcement_content span:nth-child(4) {
+    font-size: 1rem;
+    padding: 0 5px;
+    font-weight: 700;
+    color: #0a84ff;
+}
+
+.announcement_content span:nth-child(5) {
+    color: #22c9f3;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+#aside-content .card-announcement .announcement_content hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin: 0.5rem 0;
+    border: 1px dashed #0f97eb;
+    position: revert;
+}
+
+.announcement_content hr::before {
+    content: "";
+}
+
+#maxim {
+    animation: dynamic 2s infinite;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    height: 20px;
+}
+
+@keyframes dynamic {
+    0% {
+        color: #0b53ef;
+        font-size: 0.6em;
+    }
+
+    50% {
+        color: #06e7ef;
+        font-size: 0.8em;
+    }
+
+    100% {
+        color: #f20722;
+        font-size: 1em;
+    }
+}
+
+/* 特殊的日子 */
+#specialDay {
+    color: white;
+    padding: 0 !important;
+}
+
+#specialDay p,
+#specialDay h3 {
+    font-weight: normal;
+    color: inherit;
+    margin: 0;
+}
+
+#specialDay .item-headline {
+    display: none;
+}
+
+#specialDay-main {
+    min-height: 160px;
+    padding: 1rem;
+    position: relative;
+    border-radius: 12px;
+    background-image: url(http://random-img.pupper.cn/api);
+    background-size: cover;
+    background-position: center;
+}
+
+#specialDay-main * {
+    position: relative;
+    line-height: 1.3;
+}
+
+#specialDay-main .specialDay-time {
+    font-weight: bold;
+    text-align: center;
+}
+
+#specialDay-main .specialDay-time .time {
+    -webkit-animation: Glow1 0.5s ease infinite alternate;
+}
+
+@-webkit-keyframes Glow1 {
+
+    /* 兼容Chrome 和 Safari */
+    from {
+        text-shadow: 0 0 5px #ff4949, 0 0 10px #ff4949, 0 0 15px #ff4949, 0 0 20px #409eff, 0 0 35px #20b8ff, 0 0 40px #20b8ff, 0 0 50px #20b8ff, 0 0 75px #20b8ff;
+    }
+
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00a67c, 0 0 70px #00a67c, 0 0 80px #00a67c, 0 0 100px #00a67c, 0 0 150px #00a67c;
+    }
+}
+
+#specialDay-main .time,
+#specialDay-main .happyspecialDay {
+    font-size: 3.5rem;
+    margin: 1rem 0;
+    display: block;
+}
+
+#specialDay-main .day {
+    font-size: 5rem;
+    -webkit-animation: Glow 0.5s ease infinite alternate;
+}
+
+@-webkit-keyframes Glow {
+
+    /* 兼容Chrome 和 Safari */
+    from {
+        text-shadow: 0 0 5px #ff4949, 0 0 10px #ff4949, 0 0 15px #ff4949, 0 0 20px #409eff, 0 0 35px #20b8ff, 0 0 40px #20b8ff, 0 0 50px #20b8ff, 0 0 75px #20b8ff;
+    }
+
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00a67c, 0 0 70px #00a67c, 0 0 80px #00a67c, 0 0 100px #00a67c, 0 0 150px #00a67c;
+    }
+}
+
+#specialDay-main .day .unit {
+    font-size: 1rem;
+}
+
+#specialDay-main .title span {
+    font-size: 20px;
+    -webkit-animation: Glo 0.5s ease infinite alternate;
+}
+
+@-webkit-keyframes Glo {
+
+    /* 兼容Chrome 和 Safari */
+    from {
+        text-shadow: 0 0 10px #c507f3, 0 0 20px #c507f3, 0 0 30px #c507f3, 0 0 40px #00a67c, 0 0 70px #00a67c, 0 0 80px #00a67c, 0 0 100px #00a67c, 0 0 150px #00a67c;
+    }
+
+    to {
+        text-shadow: 0 0 5px #E91E63, 0 0 10px #E91E63, 0 0 15px #E91E63, 0 0 20px #FF5722, 0 0 35px #FF5722, 0 0 40px #FF5722, 0 0 50px #FF5722, 0 0 75px #FF5722;
+    }
+}
+
+#specialDay-main .mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(http://random-img.pupper.cn/api);
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+}
+
+/* 夜晚模式下背景颜色 */
+[data-theme=dark] #body-wrap {
+    background: none;
+}
+
+[data-theme=dark] #footer {
+    background: none;
+}
+
+/* 首页卡片亮光 https://blog.kouseki.cn/posts/dda6.html */
+#recent-posts>.recent-post-item:not(a)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(to right, transparent, white, transparent);
+    transform: translateX(-200%);
+    transition: transform 0.3s linear;
+    z-index: 1;
+}
+
+#recent-posts>.recent-post-item:not(a):hover::before {
+    transform: translateX(100%) skewX(-60deg);
+}
+
+/* 关于页面个性标签 */
+@keyframes floating {
+    0% {
+        transform: translate(0, -4px);
+    }
+
+    50% {
+        transform: translate(0, 4px);
+    }
+
+    100% {
+        transform: translate(0, -4px);
+    }
+}
+
+#about-page .author-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 185px;
+}
+
+#about-page .author-tag-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 355px;
+    /* 设置标签与头像之间的水平间距 */
+    position: absolute;
+    top: 15px;
+}
+
+#about-page .author-tag-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 355px;
+    /* 设置标签与头像之间的水平间距 */
+    position: absolute;
+    top: 15px;
+}
+
+/* 移动端隐藏 */
+@media screen and (max-width: 768px) {
+
+    #about-page .author-tag-left,
+    #about-page .author-tag-right {
+        display: none;
+    }
+}
+
+#about-page .author-tag-left .author-tag:first-child,
+#about-page .author-tag-left .author-tag:last-child {
+    margin-right: -16px;
+}
+
+#about-page .author-tag-right .author-tag:first-child,
+#about-page .author-tag-right .author-tag:last-child {
+    margin-left: -16px;
+}
+
+#about-page .author-tag {
+    transform: translate(0, -4px);
+    padding: 1px 8px;
+    background: #fff;
+    border: 1px solid #e3e8f7;
+    border-radius: 40px;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 5px 12px -5px rgba(102, 68, 68, 0.00);
+    animation: 4s ease-in-out 0s infinite normal none running floating;
+}
+
+/* 适配深色模式 */
+[data-theme="dark"] #about-page .author-tag {
+    background: #1e1e1e;
+}
+
+#about-page .author-tag:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#about-page .author-tag:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+#about-page .author-tag:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+#about-page .author-tag:nth-child(4) {
+    animation-delay: 1.8s;
+}
+
+/* 文章底部版权卡片 */
+#post .post-copyright .anzhiyufont.anzhiyu-icon-copyright{
+    top: -60px;
+    right: -20px;
+    font-size: 5.3em;
+}
+
+/* 搜索栏样式 */
+.search-dialog-title{
+    color: var(--anzhiyu-main);
+}
+
+#algolia-search .search-dialog .ais-SearchBox input{
+    border: 2px solid var(--anzhiyu-main);
+}
+
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item--selected a{
+    background: var(--anzhiyu-main);
+}
+
+.ais-PoweredBy-logo path:last-child {
+    fill: var(--anzhiyu-main);
+}
+
+.DocSearch-Modal{
+    border-radius: 12px;
+}
+
+.DocSearch-Modal .DocSearch-Form{
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 2px var(--anzhiyu-main);
+    height: 48px;
+}
+
+#Layer_1 .cls-1,
+#Layer_1 .cls-2{
+    fill: var(--anzhiyu-main);
+}
+
+.DocSearch-Modal .DocSearch-MagnifierLabel{
+    color: var(--anzhiyu-main);
+}
+.DocSearch-Modal .DocSearch-Input{
+    font-size: 1.0em;
+}
+
+.DocSearch-Modal .DocSearch-MagnifierLabel svg{
+    height: 20px;
+    width: 20px;
+}
+
+.DocSearch-Dropdown .DocSearch-Hit-source {
+    color: var(--anzhiyu-main);
+}
+
+.DocSearch-Dropdown .DocSearch-Hits mark{
+    color: var(--anzhiyu-main);
+}
+
+.DocSearch-Dropdown .DocSearch-Hit[aria-selected=true] a{
+    background-color: var(--anzhiyu-main);
+}
+
+.DocSearch-NoResults-Prefill-List .DocSearch-Prefill{
+    color: var(--anzhiyu-main);
+}
+
+/* 外挂标签 - card */
+.card_box {
+    display: inline-flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+    color: #fff !important;
+    margin: 32px 5px 10px;
+    font-size: 12px;
+}
+
+.card_box::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+    z-index: 0;
+}
+
+.card_box:hover .card_mask {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.card_box .card_top {
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card_box .card_mask {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+    transition: 0.5s;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    background: #333;
+}
+
+.card_box .card_mask span {
+    display: block;
+    height: calc(100% - 40px);
+    overflow: hidden;
+}
+
+.card_box .card_mask a {
+    text-align: center;
+    background: #fff;
+    color: #333 !important;
+    border-radius: 5px;
+    position: absolute;
+    width: calc(100% - 40px);
+    bottom: 20px;
+    left: 20px;
+}
+
+.card_box .card_mask a:hover {
+    text-decoration: none !important;
+    color: #fff !important;
+    background: #49b1f5;
+}
+
+.card_box .card_content {
+    z-index: 1;
+}
+
+.card_box .card_content span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+[data-theme='dark'] .card_box {
+    color: #ddd !important;
+}
+
+[data-theme='dark'] .card_box::after {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.fa-star:before {
+    content: "\f005";
+    color: #FFEB35;
+}
+
+.fa-star-half-alt:before,
+.fa-star-half-stroke:before {
+    content: "\f5c0";
+    color: #FFEB35;
+}
+
+/*  头像样式 */
+
+.avatar-img{
+    height: 118px;
+}
+
+/* 底部名言 */
+#footer-type-tips {
+    padding-left: 20px;
+}
+
+/* 评论背景 */
+#twikoo .tk-submit .tk-input.el-textarea .el-textarea__inner {
+    min-height: 14.75em !important;
+    background-image: url(https://i.pinimg.com/originals/9d/7c/d7/9d7cd7c898443d478a905981b2485546.gif);
+}
+
+/* 首页图片样式 */
+#recent-posts .post_cover a{
+    justify-content: center;
+    align-items: center;
+}
+
+#recent-posts .post_cover .post_bg_top {
+    position: absolute;
+    height: 30%;
+}
+
+#recent-posts .post_cover .post_bg {
+    filter: blur(25px);
+}
+
+#recent-posts .post_cover .article-categories-original {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 0 11px 0 12px;
+    padding: 4px 8px;
+    background-color: var(--anzhiyu-theme);
+    color: var(--anzhiyu-white);
+    font-size: 12px;
+}
+
+/* 首页个人卡片 */
+#aside-content .card-widget .author-info-avatar::before {
+    left: -10px;
+    top: -10px;
+}
+
+#aside-content .card-widget .author-info-avatar::before,
+#loading-box .loading-bg::before {
+    content: "";
+    width: 118px;
+    height: 118px;
+    position: absolute;
+    background: 0 0;
+    border: 10px groove var(--card-author-avatar-dashed-border);
+    -webkit-box-shadow: 0 0 10px var(--card-author-avatar-groove-border);
+    box-shadow: 0 0 10px var(--card-author-avatar-groove-border);
+    border-radius: 50%;
+    -webkit-animation: borderrotate 3s linear infinite alternate;
+}
+
+#aside-content .card-widget .author-info-avatar::after,
+#loading-box .loading-bg::after {
+    content: "";
+    width: 108px;
+    height: 108px;
+    position: absolute;
+    background: 0 0;
+    border: 5px dashed var(--card-author-avatar-dashed-border);
+    -webkit-box-shadow: 0 0 5px inset var(--card-author-avatar-groove-border);
+    box-shadow: 0 0 5px inset var(--card-author-avatar-groove-border);
+    border-radius: 50%;
+    -webkit-animation: borderrotate 10s linear infinite;
+    -moz-animation: borderrotate 10s linear infinite;
+    -o-animation: borderrotate 10s linear infinite;
+    -ms-animation: borderrotate 10s linear infinite;
+    animation: borderrotate 10s linear infinite;
+}
+
+@keyframes borderrotate {
+    0% {
+        -webkit-transform: rotateZ(0);
+        -moz-transform: rotateZ(0);
+        -o-transform: rotateZ(0);
+        -ms-transform: rotateZ(0);
+        transform: rotateZ(0);
+    }
+
+    100% {
+        -webkit-transform: rotateZ(360deg);
+        -moz-transform: rotateZ(360deg);
+        -o-transform: rotateZ(360deg);
+        -ms-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+    }
+}
+
+:root {
+    --card-author-avatar-groove-border: rgba(244, 252, 252, 0.3);
+    --card-author-avatar-dashed-border: rgba(70, 162, 223, 0.3);
+}

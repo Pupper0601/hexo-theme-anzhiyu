@@ -87,7 +87,7 @@ if home_top_config.enable
             .todayCard-info
               .todayCard-tips=top_group_banner_tips
               .todayCard-title=top_group_banner_title
-            img.todayCard-cover(src=url_for(top_group_banner_image) onerror=`this.onerror=null;this.src='${url_for(theme.error_img.post_page)}'` alt='封面')
+            img.todayCard-cover(fetchpriority="high" src=url_for(top_group_banner_image) onerror=`this.onerror=null;this.src='${url_for(theme.error_img.post_page)}'` alt='封面')
             .banner-button-group
               .banner-button(onclick='event.stopPropagation();event.preventDefault();anzhiyu.hideTodayCard();')
                 i.anzhiyufont.anzhiyu-icon-arrow-circle-right

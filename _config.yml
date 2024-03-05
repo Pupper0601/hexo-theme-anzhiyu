@@ -174,7 +174,7 @@ cover: # 文章封面
   position: left
   # 在链接后面加入后缀?spm={随机数} 0是不使用后缀、1是?加随机数；2是&加随机数
   default_cover:
-    - http://random-img.pupper.cn/api
+    - http://random-img.pupper.cn/api?1
 
 # 替换无法显示的图片
 error_img:
@@ -632,7 +632,7 @@ footer:
 
 # Baidu Analytics
 # https://tongji.baidu.com/web/welcome/login
-baidu_analytics: 85e3b4d561f36bc09a451ad0cc26728a
+baidu_analytics: 
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
@@ -1149,7 +1149,7 @@ home_top:
   banner:
     tips: 美图欣赏
     title: 每一次刷新，都有不一样的心情。
-    image: http://random-img.pupper.cn/api
+    image: http://random-img.pupper.cn/api?2
     link: https://pupper.cn
 
 # 朋友圈配置

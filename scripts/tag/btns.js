@@ -18,11 +18,10 @@ function postCell(args, content) {
   let icon = "";
   let img = "https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus/lib/assets/default.svg";
   if (args.length > 2) {
-    // if (args[2].indexOf(" anzhiyufont") > -1) {
-    if (args[2].indexOf("http") > -1) {
-      img = args[2].trim();
-    } else {
+    if (args[2].indexOf(" anzhiyufont") > -1) {
       icon = args[2].trim();
+    } else {
+      img = args[2].trim();
     }
   }
   if (icon.length > 0) {

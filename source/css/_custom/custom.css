@@ -613,3 +613,13 @@
         box-shadow: 0 0 1px 1px #ffce86;
     }
 }
+
+/* 文章内部图片样式 */
+#article-container img{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    max-width: 95%;
+    margin: auto;
+    border-style: groove;
+    border-color: var(--anzhiyu-main);
+    border-width: 1px;
+}

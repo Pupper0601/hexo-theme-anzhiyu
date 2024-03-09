@@ -7,7 +7,7 @@ const https = require('https'); // Make sure to import this module
 const { type } = require('os');
 
 const POSTS_DIR = process.cwd() + '/source/_posts';
-const RANDOM_IMG = 'https://random-img.pupper.cn/api';
+const RANDOM_IMG = 'https://img.pupper.cn/top-img/top-img-88.webp';
 
 // Define httpsAgent right after your imports and before the function calls
 const httpsAgent = new https.Agent({

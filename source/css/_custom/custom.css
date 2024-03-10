@@ -34,11 +34,25 @@
     color: #0a84ff;
 }
 
-.announcement_content span:nth-child(5) {
-    color: #22c9f3;
+.announcement_content .ip_address {
+    text-align:center;
+}
+
+.announcement_content .ip_address span{
+    color: #a1a0a0;
     font-size: 1rem;
     font-weight: 700;
+    background-color: #a1a0a0;
+    text-align:center;
 }
+
+.announcement_content .ip_address:hover span{
+    color: #08e7f7;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #ffffff;
+}
+
 
 #aside-content .card-announcement .announcement_content hr {
     margin-top: 5px;
@@ -53,28 +67,33 @@
 }
 
 #maxim {
-    animation: dynamic 2s infinite;
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-    height: 20px;
+    width: 22ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #00a67c;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: normal;
+    font-family: auto;
+    margin: auto;
+    margin-top: 15px;
+    background-image: linear-gradient(to right, rgb(247, 6, 6), rgb(243, 130, 0));
+    color: transparent;
+    -webkit-background-clip: text;
+    animation: typing 5s steps(22,start) infinite normal, effect .5s infinite normal;
 }
 
-@keyframes dynamic {
-    0% {
-        color: #0b53ef;
-        font-size: 0.6em;
-    }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
 
-    50% {
-        color: #06e7ef;
-        font-size: 0.8em;
-    }
-
-    100% {
-        color: #f20722;
-        font-size: 1em;
-    }
+@keyframes effect {
+  50% {
+    border-color: transparent;
+  }
 }
 
 /* 特殊的日子 */

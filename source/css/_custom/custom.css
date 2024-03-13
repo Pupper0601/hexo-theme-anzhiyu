@@ -508,7 +508,8 @@
 /* 评论背景 */
 #twikoo .tk-submit .tk-input.el-textarea .el-textarea__inner {
     min-height: 14.75em !important;
-    background-image: url(https://i.pinimg.com/originals/9d/7c/d7/9d7cd7c898443d478a905981b2485546.gif);
+    background-image: url(https://img.pupper.cn/img/1710229767.gif);
+    background-size: contain;
 }
 
 /* 首页图片样式 */

@@ -1,16 +1,19 @@
 #skills-tags-group-all {
   display: flex;
   transform: rotate(0);
-  transition: 0.3s;
 }
 #skills-tags-group-all .tags-group-wrapper {
-  margin-top: 40px;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   animation: rowup 60s linear infinite;
+  width: 320px;
+  margin-left: auto;
+  margin-top: 0;
 }
 #skills-tags-group-all .tags-group-icon-pair {
   margin-left: 1rem;
+  user-select: none;
+  display: flex;
 }
 #skills-tags-group-all .tags-group-icon {
   display: flex;
@@ -32,6 +35,7 @@
   filter: none;
 }
 #skills-tags-group-all .tags-group-icon-pair .tags-group-icon:nth-child(even) {
+  margin-left: 5rem;
   margin-top: 1rem;
   transform: translate(-60px);
 }
@@ -43,9 +47,9 @@
 
 @keyframes rowup {
   0% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateY(-50%);
   }
 }

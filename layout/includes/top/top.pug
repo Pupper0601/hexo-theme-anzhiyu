@@ -5,24 +5,14 @@ if home_top_config.enable
     .swiper_container_card(style='height: auto;width: 100%')
       #bannerGroup
         #random-banner
-          if theme.peoplecanvas.enable
-            canvas#peoplecanvas
-          else 
-            .banners-title
+          include ../anzhiyu/tags-group-all.pug
+          .banners-title
               .banners-title-big=title
               .banners-title-big=subTitle
               .banners-title-small=siteText
-            include ../anzhiyu/tags-group-all.pug
-
-          a#random-hover(href='javascript:toRandomPost()')
-            i.anzhiyufont.anzhiyu-icon-paper-plane
-            .bannerText 随便逛逛
-              i.anzhiyufont.anzhiyu-icon-arrow-right
-        .categoryGroup
-          each item in home_top_config.category
-            .categoryItem(style=`box-shadow:${item.shadow}`)
+          .banners-link
+            each item in home_top_config.category
               a.categoryButton(href=url_for(item.path) class=`${item.class}`)
-                span.categoryButtonText=item.name
                 if (item.icon.startsWith("fa"))
                   i(class=`${item.icon}`)
                 else if (item.icon.startsWith("icon"))
@@ -30,6 +20,13 @@ if home_top_config.enable
                     use(xlink:href=`#`+ item.icon)
                 else if (item.icon.startsWith("anzhiyu"))
                   i.anzhiyufont(class=`${item.icon}`)
+                div.categoryButtonText=item.name
+          if home_top_config.random_articles
+            a#random-hover(href='javascript:toRandomPost()')
+              i.anzhiyufont.anzhiyu-icon-paper-plane
+              .bannerText 随便逛逛
+                i.anzhiyufont.anzhiyu-icon-arrow-right
+
       if theme.home_top.swiper.enable
         #swiper_container_blog
           #swiper_container.blog-slider.swiper-container-fade.swiper-container-horizontal

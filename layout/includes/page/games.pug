@@ -2,7 +2,7 @@
   each i in site.data.games
     .author-content.author-content-item.gamesPage.single
       video#Top_Video(width="100%" height="100%" style="object-fit:cover;z-index:0" preload="auto" autoplay="" loop="" muted="" playsinline="" webkit-playsinline="" x5-playsinline="" x5-video-player-type="h5" x5-video-player-fullscreen="" x5-video-orientation="portraint" x-webkit-airplay="allow" jm_neat="666761217")
-      source(src=i.top_background type="video/mp4")
+        source(src=i.top_background type="video/mp4")
       .card-content
         .author-content-item-tips= i.class_name
         span.author-content-item-title= i.description

@@ -2,7 +2,7 @@ hexo.extend.generator.register("random", function (locals) {
   const config = hexo.config.random || {};
   const themeConfig = hexo.theme.config;
   const pjaxEn = themeConfig.pjax.enable;
-  const randomNumberFriend = themeConfig.footer.list.randomFriends || 0;
+  const randomNumberFriend = themeConfig.linkPageTop.randomFriends || 0;
   const posts = [];
   const link = locals.data.link || [];
   for (const post of locals.posts.data) {
@@ -23,8 +23,8 @@ hexo.extend.generator.register("random", function (locals) {
     ${pjaxEn ? "pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);" : "window.location.href='/'+posts[Math.floor(Math.random() * posts.length)];"}
   };`;
 
-  if (themeConfig.footer.list.enable && randomNumberFriend > 0) {
-    result += `var friend_link_list=${JSON.stringify(link_list)};
+  if (themeConfig.linkPageTop.enable && randomNumberFriend > 0) {
+    result += `window.friend_link_list=${JSON.stringify(link_list)};
     var refreshNum = 1;
     function friendChainRandomTransmission() {
       const randomIndex = Math.floor(Math.random() * friend_link_list.length);

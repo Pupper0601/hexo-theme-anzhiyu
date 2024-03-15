@@ -15,7 +15,7 @@
               i.anzhiyufont.anzhiyu-icon-arrow-circle-right
               span.banner-button-text 申请友链
       #skills-tags-group-all
-        .tags-group-wrapper
+        .tags-group-wrapper-link
           - function getAvatarWithoutExclamationMark(url) {
           -   const index = url.indexOf('!');
           -   return index !== -1 ? url.substring(0, index) : url;
@@ -31,7 +31,7 @@
                 if (index <= 15 && typeof evenNum[index] !== 'undefined' && typeof oddNum[index] !== 'undefined')
                   - let oddNumAvatar = getAvatarWithoutExclamationMark(oddNum[index].avatar);
                   - let evenNumAvatar = getAvatarWithoutExclamationMark(evenNum[index].avatar);
-                  .tags-group-icon-pair
+                  .tags-group-icon-pair-link
                     a.tags-group-icon.no-text-decoration(href=url_for(evenNum[index].link), title=evenNum[index].name)
                       img.no-lightbox(title=evenNum[index].name, src=url_for(evenNumAvatar + hundredSuffix) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt=evenNum[index].name)
                     a.tags-group-icon.no-text-decoration(href=url_for(oddNum[index].link), title=oddNum[index].name)

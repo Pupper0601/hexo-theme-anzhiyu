@@ -44,8 +44,6 @@ body[data-type="link"]
   #skills-tags-group-all
     .img-alt
       display: none
-    .tags-group-wrapper
-      animation: rowup 120s linear infinite;
     .tags-group-icon
       border-radius: 50%;
       img
@@ -53,6 +51,15 @@ body[data-type="link"]
         min-height: 100%;
         border-radius: 50%;
         object-fit: cover;
+
+@keyframes rowup1 {
+  0% {
+      transform: translateX(0);
+  }
+    100% {
+      transform: translateX(-50%);
+  }
+}
 
 .flink-desc
   margin: .2rem 0 .5rem

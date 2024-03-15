@@ -57,7 +57,6 @@ mourn:
 
 # Code Blocks (代码相关)
 # --------------------------------------
-
 highlight_theme: mac #  darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
@@ -718,7 +717,7 @@ sidebar:
 h2Divider: false
 
 # 表格隔行变色
-table_interlaced_discoloration: false
+table_interlaced_discoloration: true
 
 # 首页双栏显示
 article_double_row: true
@@ -1049,7 +1048,7 @@ note:
 icons:
   ali_iconfont_js: //at.alicdn.com/t/c/font_4230767_eagz2o0prnn.js # 阿里图标symbol 引用链接，主题会进行加载 symbol 引用
   fontawesome: true #是否启用fontawesome6图标
-  fontawesome_animation_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/font-awesome-animation.min.css #fontawesome_animation 如果有就会加载，示例值：https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/font-awesome-animation.min.css
+  fontawesome_animation_css:  #fontawesome_animation 如果有就会加载，示例值：https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/assets/font-awesome-animation.min.css
 
 # other
 # --------------------------------------
@@ -1080,7 +1079,7 @@ snackbar:
 
 # https://instant.page/
 # prefetch (预加载)
-instantpage: true
+instantpage: false
 
 # https://github.com/vinta/pangu.js
 # 中英文之间添加空格
@@ -1126,17 +1125,18 @@ home_top:
   subTitle: 万物可爱。
   siteText: pupper.cn
   category:
-    - name: 学习笔记
+    - name: 热门
       path: /categories/学习笔记/
-      shadow: var(--anzhiyu-shadow-blue)
-      class: blue
-      icon: anzhiyu-icon-dove
-    - name: 软件测试
-      path: /categories/软件测试/
       shadow: var(--anzhiyu-shadow-red)
       class: red
       icon: anzhiyu-icon-fire
+    - name: 必看
+      path: /categories/软件测试/
+      shadow: var(--anzhiyu-shadow-blue)
+      class: blue
+      icon: anzhiyu-icon-dove
   default_descr: 再怎么看我也不知道怎么描述它的啦！
+  random_articles: false
   swiper:
     enable: false
     swiper_css: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css #swiper css依赖
@@ -1287,7 +1287,7 @@ agreementPopup:
 
 # 右键菜单
 rightClickMenu:
-  enable: false
+  enable: true
 
 # 首页随便逛逛people模式 而非技能点模式，关闭后为技能点模式需要配置creativity.yml
 peoplecanvas:
@@ -1297,8 +1297,8 @@ peoplecanvas:
 # 动效
 dynamicEffect:
   postTopWave: true # 文章顶部波浪效果
-  postTopRollZoomInfo: false # 文章顶部滚动时缩放
-  pageCommentsRollZoom: false # 非文章页面评论滚动时缩放显示（仅仅Twikoo生效）
+  postTopRollZoomInfo: true # 文章顶部滚动时缩放
+  pageCommentsRollZoom: true # 非文章页面评论滚动时缩放显示（仅仅Twikoo生效）
 
 # Inject
 # Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
@@ -1311,14 +1311,14 @@ inject:
   bottom:
     # 自定义js
     # - <script src="/js/xxx"></script>
-    - <script defer src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script> # jQuery
+    - <script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script> # jQuery
     - <script defer src="/js/notice.js"></script> # 公告栏
 
     # 特殊日期倒计时
     - <script defer src="/js/specialDay.js"></script>
-    - <script defer src="https://cdn.wpon.cn/2022-sucai/Gold-ingot.js"></script> # 新年元宝
+    - <script defer src="/js/Gold-ingot.js"></script> # 新年元宝
     # 音乐馆
-    - <script defer src="/js/Meting2.min.js"></script>
+    - <script src="/js/Meting2.min.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work

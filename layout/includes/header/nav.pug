@@ -28,8 +28,8 @@ nav#nav
       !=partial('includes/header/menu_item', {}, {cache: true})
     #nav-right
       if theme.nav.travelling
-        .nav-button.only-home#travellings_button(title='随机前往一个开往项目网站')
-          a.site-page(onclick='anzhiyu.totraveling()', title='随机前往一个开往项目网站', href='javascript:void(0);', rel='external nofollow', data-pjax-state='external')
+        .nav-button.only-home#travellings_button(title='随机前往一个友链网站')
+          a.site-page(onclick='friendChainRandomTransmission()', title='随机前往一个友链网站', href='javascript:void(0);', rel='external nofollow', data-pjax-state='external')
             i.anzhiyufont.anzhiyu-icon-train
       .nav-button#randomPost_button
         a.site-page(onclick='toRandomPost()', title='随机前往一个文章', href='javascript:void(0);')

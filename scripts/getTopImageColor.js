@@ -90,12 +90,12 @@ async function addCoverAndMainColor(filePath) {
         }
     }
 
-    if (data.update) {
-        const _update = formatISO8601ToCustomFormat(data.update);
-        if (_update === -1) {
+    if (data.updated) {
+        const _updated = formatISO8601ToCustomFormat(data.update);
+        if (_updated === -1) {
             updated = false;
         } else {
-            data.update = _update
+            data.updated = _updated
             updated = true;
         }
     }

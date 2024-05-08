@@ -21,6 +21,7 @@ mixin postUI(posts)
         .post_cover(class=leftOrRight)
           a(href=url_for(link) title=title style='display: flex;height: 100%;')
             img.post_bg(src=url_for(post_cover) onerror=`this.onerror=null;this.src='`+ url_for(theme.error_img.post_page) + `'` alt=title style='pointer-events: none')
+            p.post_title= title
             img.post_bg_top(src=url_for(post_cover) onerror=`this.onerror=null;this.src='`+ url_for(theme.error_img.post_page) + `'` alt=title style='pointer-events: none')
             if (theme.post_meta.page.categories && article.categories.data.length > 0)
                 each item, index in article.categories.data

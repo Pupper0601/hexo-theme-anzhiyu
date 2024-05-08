@@ -226,18 +226,30 @@
 #recent-posts > .recent-post-item:not(a)::before {
 	content: "";
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 50%;
-	height: 200%;
+	top: -230px;
+	left: -300px;
+	width: 30%;
+	height: 170%;
 	background: linear-gradient(to right, transparent, white, transparent);
-	transform: translateX(-200%);
+	transform: rotate(45deg);
 	transition: transform 0.3s linear;
 	z-index: 1;
 }
 
 #recent-posts > .recent-post-item:not(a):hover::before {
-	transform: translateX(100%) skewX(-60deg);
+	/* transform: translateX(100%) skewX(-60deg); */
+	animation: a 0.3s linear;
+}
+
+@keyframes a {
+	0% {
+		top: -230px;
+		left: -300px;
+	}
+	100% {
+		top: -50px;
+		left: 540px;
+	}
 }
 
 /* 关于页面个性标签 */
@@ -545,6 +557,20 @@
 	background-color: var(--anzhiyu-theme);
 	color: var(--anzhiyu-white);
 	font-size: 12px;
+}
+
+#recent-posts .post_cover .post_title {
+	position: absolute;
+	font-size: 2rem;
+	color: #fff;
+	/* padding: 30px; */
+	width: 88%;
+	/* margin: 30px; */
+	overflow: hidden;
+	white-space: nowrap;
+	/* font-family: 'anzhiyufont'; */
+	text-overflow: ellipsis;
+	font-weight: 900;
 }
 
 /* 首页个人卡片 */

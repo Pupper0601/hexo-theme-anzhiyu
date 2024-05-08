@@ -15,7 +15,6 @@
     border: none;
     margin: 0 0 1rem 0rem;
     overflow: hidden;
-    border-radius: 12px;
 
     &.no-article-cover
       height: 80px
@@ -37,7 +36,9 @@
 
     &-time
       color: $theme-meta-color
-      font-size: 95%
+      font-size: 70%
+      height: 34px
+      padding-top: 8px
 
       time
         padding-left: 6px
@@ -81,17 +82,17 @@
         @extend .imgHover
 
     &-info
-      padding: 0 0.8rem;
-      display: flex;
-      flex-direction: column;
-      max-height: 80px;
-      height: 80px;
-      justify-content: space-between;
+      // padding: 0 0.8rem;
+      // display: flex;
+      // flex-direction: column;
+      // max-height: 80px;
+      // height: 80px;
+      // justify-content: space-between;
       .article-sort-item-index
         +maxWidth768()
           display: none
       .article-sort-item-title
-        height: 30%;
+        // height: 30%;
         +maxWidth768()
           font-size: .9em;
           height: 25%;

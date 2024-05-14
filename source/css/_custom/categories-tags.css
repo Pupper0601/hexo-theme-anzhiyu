@@ -39,7 +39,7 @@
 	background: var(--card-bg);
 	transition: 0.5s;
 	height: 120px;
-	box-shadow: 0px 0px 3px 2px rgb(0, 31, 40, 0.53);
+	box-shadow: 0px 0px 0px 1px rgb(0, 31, 40, 0.12);
 	color: rgb(231, 231, 231);
 }
 
@@ -113,13 +113,9 @@
 	transition: 0.5s;
 }
 .article-sort-item:hover:not(.year) {
-	background-color: #13a6ba;
-	box-shadow: 0 0 10px #1688c9;
+	box-shadow: 0px 0px 10px #4c424e;
 }
-.article-sort-item:hover:not(.year) {
-	background-color: #13a6ba;
-	box-shadow: 0 0 10px #1688c9;
-}
+
 .article-sort-item:hover:not(.year) > i {
 	width: auto;
 	opacity: 1;

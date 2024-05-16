@@ -128,4 +128,58 @@
                   else
                     img.cf-friends-avatar.no-lightbox(src=url_for(item.avatar) cf-src=url_for(item.avatar) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt='cover' )
                   span.flink-sitename.cf-friends-name= item.name
+        else if i.flink_style === 'supercard'
+          .links-friends
+            each item in i.link_list
+              .friends-item
+                .player 
+                  - var level = item.level || 'v1'
+                  .player-content-v1(class= level === 'v2' ? 'player-content-v2' : level === 'v3' ? 'player-content-v3' : '')
+                    if item.alias
+                      span(class= level === 'v1' ? 'alias-v1' : level === 'v2' ? 'alias-v2' : level === 'v3' ? 'alias-v3' :'')
+                        span
+                          if item.level === 'v1'
+                            a(href=url_for(theme.friends_vip.alias.v1), data-fancybox="gallery", data-caption="", data-thumb=url_for(theme.friends_vip.alias.v1))
+                              img(src=url_for(theme.friends_vip.alias.v1), onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'`, style="width: 12px", onclick="return false;", data-ll-status="loaded", class="entered loaded")
+                          else if item.level === 'v2'
+                            a(href=url_for(theme.friends_vip.alias.v2), data-fancybox="gallery", data-caption="", data-thumb=url_for(theme.friends_vip.alias.v2))
+                              img(src=url_for(theme.friends_vip.alias.v2), onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'`, data-lazy-src=url_for(theme.friends_vip.alias.v2), style="width: 12px", onclick="return false;", data-ll-status="loaded", class="entered loaded")
+                          else if item.level === 'v3'
+                            a(href=url_for(theme.friends_vip.alias.v3), data-fancybox="gallery", data-caption="", data-thumb=url_for(theme.friends_vip.alias.v3))
+                              img(src=url_for(theme.friends_vip.alias.v3), onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'`, data-lazy-src=url_for(theme.friends_vip.alias.v3), style="width: 12px", onclick="return false;", data-ll-status="loaded", class="entered loaded")
+                        = item.alias
+                    if item.buoy === true
+                      .player-bg
+                        if item.level === 'v1'
+                          a(href=url_for(theme.friends_vip.buoy.v1), data-fancybox="gallery", data-caption="", data-thumb=url_for(theme.friends_vip.buoy.v1))
+                            img(src=url_for(theme.friends_vip.buoy.v1), onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'`, data-lazy-src=url_for(theme.friends_vip.buoy.v1), data-ll-status="loaded", class="entered loaded")
+                        else if item.level === 'v2'
+                          a(href=url_for(theme.friends_vip.buoy.v2), data-fancybox="gallery", data-caption="", data-thumb=url_for(theme.friends_vip.buoy.v2))
+                            img(src=url_for(theme.friends_vip.buoy.v2), onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'`, data-lazy-src=url_for(theme.friends_vip.buoy.v2), data-ll-status="loaded", class="entered loaded")
+                        else if item.level === 'v3'
+                          a(href=url_for(theme.friends_vip.buoy.v3), data-fancybox="gallery", data-caption="", data-thumb=url_for(theme.friends_vip.buoy.v3))
+                            img(src=url_for(theme.friends_vip.buoy.v3), onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'`, data-lazy-src=url_for(theme.friends_vip.buoy.v3), data-ll-status="loaded", class="entered loaded")
+                    .album-cover(class= level=== 'v1'? 'album-cover-v1' : level === 'v2' ? 'album-cover-v2' : level === 'v3' ? 'album-cover-v3' : '')
+                      a(href=url_for(item.link), title=url_for(item.name), target="_blank", draggable="false")
+                        img.cf-friends-avatar.no-lightbox.entered.loaded(data-lazy-src=url_for(item.avatar), onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'`, alt=url_for(item.name), draggable="false", data-ll-status="loaded", src=url_for(item.avatar))
+                    if item.buoy === true
+                      if item.level === 'v1'
+                        a(href=url_for(theme.friends_vip.symbol.v1), data-fancybox="gallery", data-caption="", data-thumb=url_for(theme.friends_vip.symbol.v1))
+                          img.ava-badge.entered.loaded(src=url_for(theme.friends_vip.symbol.v1), onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'`, data-lazy-src=url_for(theme.friends_vip.symbol.v1), data-ll-status="loaded")
+                      else if item.level === 'v2'
+                        a(href=url_for(theme.friends_vip.symbol.v2), data-fancybox="gallery", data-caption="", data-thumb=url_for(theme.friends_vip.symbol.v2))
+                          img.ava-badge.entered.loaded(src=url_for(theme.friends_vip.symbol.v2), onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'`, data-lazy-src=url_for(theme.friends_vip.symbol.v2), data-ll-status="loaded")
+                      else if item.level === 'v3'
+                        a(href=url_for(theme.friends_vip.symbol.v3), data-fancybox="gallery", data-caption="", data-thumb=url_for(theme.friends_vip.symbol.v3))
+                          img.ava-badge.entered.loaded(src=url_for(theme.friends_vip.symbol.v3), onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'`, data-lazy-src=url_for(theme.friends_vip.symbol.v3), data-ll-status="loaded")
+                    .play-controls-name
+                      a(href=url_for(item.link), target="_blank", draggable="false")
+                        h4.ui.header.one-line.f-w-name-hg-1(class=level=== 'v1' ? 'f-w-name-ph' : level === 'v2' ? 'f-w-name-zx' : level === 'v3' ? 'f-w-name-pv' : '', title=url_for(item.name))= item.name
+                    .play-controls-time
+                      - var date = new Date(item.add_time)
+                      - var formattedDate = date.toISOString().split('T')[0]
+                      p.one-line(class=level=== 'v1' ? 'f-w-name-ph' : level === 'v2' ? 'f-w-name-zx' : level === 'v3' ? 'f-w-name-pv' : '')= formattedDate +' 加入本站'
+                    .play-controls-introduction
+                      p.one-line(class=level=== 'v1' ? 'f-w-name-ph' : level === 'v2' ? 'f-w-name-zx' : level === 'v3' ? 'f-w-name-pv' : '')(title=url_for(item.descr))= item.descr
+        
     != page.content

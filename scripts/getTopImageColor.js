@@ -78,51 +78,51 @@ async function addCoverAndMainColor(filePath) {
 
     const data = yaml.load(yamlSection[1]);
 
-    let updated = false;
+    let update = false;
 
     if (data.date) {
         const _date = formatISO8601ToCustomFormat(data.date);
         if (_date === -1) {
-            updated = false;
+            update = false;
         } else {
             data.date = _date
-            updated = true;
+            update = true;
         }
     }
 
-    if (data.updated) {
-        const _updated = formatISO8601ToCustomFormat(data.update);
-        if (_updated === -1) {
-            updated = false;
+    if (data.update) {
+        const _update = formatISO8601ToCustomFormat(data.update);
+        if (_update === -1) {
+            update = false;
         } else {
-            data.updated = _updated
-            updated = true;
+            data.update = _update
+            update = true;
         }
     }
 
     if (!data.cover) {
         data.cover = await getCoverImage();
-        updated = true;
+        update = true;
     }
 
     if (!data.main_color) {
         data.main_color = await getMainColor(data.cover);
-        updated = true;
+        update = true;
     }
 
-    if (updated) {
-        const updatedYaml = yaml.dump(data);
-        const updatedContent = content.replace(yamlSection[1], updatedYaml);
-        fs.writeFileSync(filePath, updatedContent, 'utf8');
-        console.log(`Updated: ${filePath}`);
+    if (update) {
+        const updateYaml = yaml.dump(data);
+        const updateContent = content.replace(yamlSection[1], updateYaml);
+        fs.writeFileSync(filePath, updateContent, 'utf8');
+        console.log(`update: ${filePath}`);
     }
 }
 
 // processFiles(POSTS_DIR);
 
 // 在文件底部添加这段代码
-hexo.on('before_generate', async () => {
-    console.log('Automatically updating cover and main color...');
+hexo.extend.filter.register('before_generate', async () => {
+    console.log('自动更新封面和主色...');
     await processFiles(POSTS_DIR);
-    console.log('Cover and main color updated successfully!');
+    console.log('封面和主色更新成功!');
 });

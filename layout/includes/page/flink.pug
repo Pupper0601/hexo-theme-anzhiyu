@@ -180,6 +180,6 @@
                       - var formattedDate = date.toISOString().split('T')[0]
                       p.one-line(class=level=== 'v1' ? 'f-w-name-ph' : level === 'v2' ? 'f-w-name-zx' : level === 'v3' ? 'f-w-name-pv' : '')= formattedDate +' 加入本站'
                     .play-controls-introduction
-                      p.one-line(class=level=== 'v1' ? 'f-w-name-ph' : level === 'v2' ? 'f-w-name-zx' : level === 'v3' ? 'f-w-name-pv' : '')(title=url_for(item.descr))= item.descr
+                      p.one-line(class=level=== 'v1' ? 'f-w-name-ph' : level === 'v2' ? 'f-w-name-zx' : level === 'v3' ? 'f-w-name-pv' : '', title=url_for(item.descr))= item.descr
         
     != page.content

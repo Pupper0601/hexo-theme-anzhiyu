@@ -29,13 +29,15 @@
       margin-top: 20px
     +maxWidth768()
       margin-top: 0px
+  .sticky_layout
+    .card-widget
+      padding: 20px 24px
 
   .card-widget
     @extend .cardHover
     position: relative
     overflow: hidden
     margin-top: 20px
-    padding: 20px 24px
 
     if hexo-config('aside.mobile') == false
       +maxWidth768()

@@ -1315,9 +1315,6 @@ inject:
     - <script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script> # jQuery
     - <script defer src="/js/notice.js"></script> # 公告栏
 
-    # 特殊日期倒计时
-    - <script defer src="/js/specialDay.js"></script>
-    - <script defer src="/js/Gold-ingot.js"></script> # 新年元宝
     # 音乐馆
     - <script src="/js/Meting2.min.js"></script>
 

@@ -334,7 +334,10 @@
 
 #recent-posts .post_cover .post_bg_top {
 	position: absolute;
-	height: 30%;
+	height: 50%;
+	opacity: 0.8;
+	mask: -webkit-radial-gradient(closest-side circle, #fff 20%, transparent 100%);
+	mask: radial-gradient(closest-side circle, #fff 20%, transparent 100%);
 }
 
 #recent-posts .post_cover .post_bg {

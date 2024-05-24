@@ -131,7 +131,7 @@
         else if i.flink_style === 'supercard'
           .links-friends
             each item in i.link_list
-              .friends-item
+              .friends-item(onclick="window.open('"+item.link+"')")
                 .player 
                   - var level = item.level || 'v1'
                   .player-content-v1(class= level === 'v2' ? 'player-content-v2' : level === 'v3' ? 'player-content-v3' : '')
@@ -181,5 +181,5 @@
                       p.one-line(class=level=== 'v1' ? 'f-w-name-ph' : level === 'v2' ? 'f-w-name-zx' : level === 'v3' ? 'f-w-name-pv' : '')= formattedDate +' 加入本站'
                     .play-controls-introduction
                       p.one-line(class=level=== 'v1' ? 'f-w-name-ph' : level === 'v2' ? 'f-w-name-zx' : level === 'v3' ? 'f-w-name-pv' : '', title=url_for(item.descr))= item.descr
-        
+          
     != page.content

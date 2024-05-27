@@ -113,8 +113,8 @@
 .alias-v2 {
 	position: absolute;
 	padding: 0 4px;
-  background: linear-gradient(to right, rgb(217 48 83), rgb(150 89 205));
-  color: #efefef !important;
+	background: linear-gradient(to right, rgb(217 48 83), rgb(150 89 205));
+	color: #efefef !important;
 	border-radius: 8px 0 8px 0;
 	font-size: 12px;
 	line-height: 1.7em;
@@ -123,8 +123,8 @@
 .alias-v3 {
 	position: absolute;
 	padding: 0 4px;
-  background: linear-gradient(to right, rgb(67, 206, 162), rgb(24, 90, 157));
-  color: #efefef !important;
+	background: linear-gradient(to right, rgb(67, 206, 162), rgb(24, 90, 157));
+	color: #efefef !important;
 	border-radius: 8px 0 8px 0;
 	font-size: 12px;
 	line-height: 1.7em;
@@ -246,18 +246,6 @@
 	top: 0;
 	left: 68px;
 	width: calc(100% - 178px);
-}
-
-#article-container
-	a:not([data-fancybox="gallery"]):not(.headerlink):not(.cf-friends-link):not(
-		.tag-Link
-	):not(.btn-anzhiyu):not(.no-text-decoration) {
-	font-weight: 500;
-	border-bottom: solid 2px var(--anzhiyu-lighttext);
-	color: var(--anzhiyu-fontcolor);
-	padding: 0 0.2em;
-	text-decoration: none;
-	font-family: auto;
 }
 
 .one-line {

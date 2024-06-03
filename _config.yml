@@ -1319,7 +1319,7 @@ dynamicEffect:
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-
+    # - <script defer src="/js/update_commit.js"></script>
   bottom:
     # 音乐馆
     - <script defer src="/js/Meting2.min.js"></script>

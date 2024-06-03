@@ -114,7 +114,7 @@ async function addCoverAndMainColor(filePath) {
         const updateYaml = yaml.dump(data);
         const updateContent = content.replace(yamlSection[1], updateYaml);
         fs.writeFileSync(filePath, updateContent, 'utf8');
-        console.log(`update: ${filePath}`);
+        // console.log(`update: ${filePath}`);
     }
 }
 
@@ -122,7 +122,6 @@ async function addCoverAndMainColor(filePath) {
 
 // 在文件底部添加这段代码
 hexo.extend.filter.register('before_generate', async () => {
-    console.log('自动更新封面和主色...');
     await processFiles(POSTS_DIR);
-    console.log('封面和主色更新成功!');
+    console.log('封面和主色调更新成功!');
 });

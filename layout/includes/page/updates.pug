@@ -1,0 +1,18 @@
+#article-container
+  #update-log.timeline.red
+    if site.data.updates 
+      each item in site.data.updates 
+        .timeline-item 
+          .timeline-item-title
+            .item-circle
+              p=item.year
+          each day in item.day_list
+            .timeline-item-title
+              .item-circle
+                p=day.day
+            .timeline-item-content
+                ol 
+                  each log in day.log_list
+                    li=log.content
+                      a(href='https://github.com/Pupper0601/HexoNote/commit/' + log.id, style="position: absolute; right: 10px;")=log.short_id
+

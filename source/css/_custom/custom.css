@@ -336,7 +336,11 @@
 	position: absolute;
 	height: 50%;
 	opacity: 0.8;
-	mask: -webkit-radial-gradient(closest-side circle, #fff 20%, transparent 100%);
+	mask: -webkit-radial-gradient(
+		closest-side circle,
+		#fff 20%,
+		transparent 100%
+	);
 	mask: radial-gradient(closest-side circle, #fff 20%, transparent 100%);
 }
 
@@ -473,4 +477,9 @@
 	border-style: groove;
 	border-color: var(--anzhiyu-main);
 	border-width: 1px;
+}
+
+/* 更新记录样式 */
+#content .timeline-item .timeline-item-content a:hover {
+	color: #eaeffe !important;
 }

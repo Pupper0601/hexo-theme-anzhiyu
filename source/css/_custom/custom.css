@@ -480,6 +480,6 @@
 }
 
 /* 更新记录样式 */
-#content .timeline-item .timeline-item-content a:hover {
+#update-log .timeline-item .timeline-item-content a:hover {
 	color: #eaeffe !important;
 }

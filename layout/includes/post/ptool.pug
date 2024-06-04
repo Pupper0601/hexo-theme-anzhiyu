@@ -38,7 +38,7 @@ if !theme.disable_top_img && page.top_img !== false
           a.share-button(target='_blank' href=`https://service.weibo.com/share/share.php?title=${site_title}&url=${url}&pic=${bg_img}` rel='external nofollow noreferrer noopener')
             i.anzhiyufont.anzhiyu-icon-weibo
       if theme.ptool.share_copyurl
-        script.
+        script.       
           function copyCurrentPageUrl() {
             var currentPageUrl = window.location.href;
             var input = document.createElement("input");

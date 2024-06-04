@@ -256,7 +256,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 800);
       }
     };
-
     const copy = ctx => {
       if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
         document.execCommand("copy");
@@ -265,6 +264,7 @@ document.addEventListener("DOMContentLoaded", function () {
         alertInfo(ctx, GLOBAL_CONFIG.copy.noSupport);
       }
     };
+
 
     // click events
     const highlightCopyFn = ele => {
@@ -470,8 +470,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ele.forEach(item => {
         item.classList.contains("url")
           ? fetchUrl(item.textContent).then(res => {
-              runJustifiedGallery(item, res);
-            })
+            runJustifiedGallery(item, res);
+          })
           : runJustifiedGallery(item, JSON.parse(item.textContent));
       });
     };

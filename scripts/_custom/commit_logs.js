@@ -5,14 +5,8 @@ const yaml = require('js-yaml');
 const filePath = 'source/_data/updates.yml';
 const user = 'Pupper0601';
 const repo = 'HexoNote';
-const token = decrypt('Z2hwX0VUN0lpc2h4SE5ZV09OY1ROcTFhYnBSaFd4dmt3RzNqc1pJcw==');
+const encryptionToken = 'Z2hwX0NPbkFZWDJsSTg2d0RBTkRXMFFPaGFLS05CRDV2YzNYblVqag==';
 const id = getFirstCommitId(filePath);
-
-
-// 解密函数
-function decrypt(encryptedToken) {
-  return atob(encryptedToken);
-}
 
 async function getGitHubCommits(user, repo, token, id = '', page = 1) {
   try {
@@ -38,7 +32,7 @@ async function getGitHubCommits(user, repo, token, id = '', page = 1) {
       return commits;
     }
   } catch (error) {
-    console.error(error);
+    console.error('请求报错' + error);
   }
 }
 
@@ -67,6 +61,8 @@ function getFirstCommitId(filePath) {
 }
 
 function updateLogs() {
+  const token = Buffer.from(encryptionToken, 'base64').toString();
+  console.log(token);
   getGitHubCommits(user, repo, token, id).then(commits => {
     const logs = [];
     for (i in commits) {

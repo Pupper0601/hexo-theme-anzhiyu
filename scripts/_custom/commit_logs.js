@@ -13,12 +13,13 @@ async function updateLogs() {
     data = yaml.load(fileContent);
     if (data !== undefined) {
       if (data.length > 0 && data[0].day_list.length > 0 && data[0].day_list[0].log_list.length > 0) {
-        sinceId = data[0].day_list[0].log_list[0].id;
+        sinceId = data[0].day_list[0].log_list[0].short_id;
       }
     }
   }
 
-  const command = sinceId ? `git log --pretty=format:"%ad||%s||%h||%H" ${sinceId}..HEAD` : 'git log --pretty=format:"%ad||%s||%h||%H"';
+  const command = sinceId ? `git log --pretty=format:"%ad||%s||%h||%H" --date=format:"%Y-%m-%d %H:%M:%S" ${sinceId}..HEAD` : 'git log --pretty=format:"%ad||%s||%h||%H" --date=format:"%Y-%m-%d %H:%M:%S"';
+  console.log(command);
   exec(command, (error, stdout) => {
     if (error) {
       console.error(`执行的错误: ${error}`);
@@ -27,8 +28,8 @@ async function updateLogs() {
 
     const newLogs = stdout.split('\n').map(log => {
       const [date, content, short_id, id] = log.split('||');
-      const year = date.split('-')[0];
-      const day = date.split('-').slice(1).join('-');
+      const year = date.split(' ')[0].split('-')[0];
+      const day = date.split(' ')[0].split('-').slice(1).join('-');
 
       return {
         year,
@@ -37,7 +38,8 @@ async function updateLogs() {
           content,
           short_id,
           id,
-          url: `https://github.com/${create}/commit/${id}`
+          url: `https://github.com/${create}/commit/${id}`,
+          update: date.split(' ')[1]
         }
       };
     }).sort((a, b) => {
@@ -78,6 +80,11 @@ async function updateLogs() {
     // 对每个年份中的日期进行倒序排序
     data.forEach(yearObj => {
       yearObj.day_list.sort((a, b) => b.day.localeCompare(a.day));
+
+      // 对每个日期中的提交按照时间进行倒序排序
+      yearObj.day_list.forEach(dayObj => {
+        dayObj.log_list.sort((a, b) => new Date(b.time) - new Date(a.time));
+      });
     });
 
     const yamlStr = yaml.dump(data);
@@ -88,9 +95,11 @@ async function updateLogs() {
 
 // updateLogs()
 
+// 如果需要调试, 需要注销以下代码
 hexo.extend.filter.register('before_generate', async () => {
   if (hexo.env.cmd !== 'server') {
     updateLogs();
     console.log('博客修改记录更新成功!');
   }
 });
+

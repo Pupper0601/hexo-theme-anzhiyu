@@ -14,5 +14,7 @@
                 ol 
                   each log in day.log_list
                     li=log.content
+                      - var time = log.time.split(' ')[1]
+                      i.fa-solid.fa-code-commit=time
                       a(href=log.url, style="position: absolute; right: 10px;")=log.short_id
 

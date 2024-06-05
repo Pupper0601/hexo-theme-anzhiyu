@@ -39,7 +39,7 @@ async function updateLogs() {
           short_id,
           id,
           url: `https://github.com/${create}/commit/${id}`,
-          time: date.split(' ')[1]
+          time: date
         }
       };
     }).sort((a, b) => {
@@ -71,7 +71,10 @@ async function updateLogs() {
         yearObj.day_list.push(dayObj);  // 添加到数组末尾
       }
 
-      dayObj.log_list.push(log.commit);  // 添加到数组末尾
+      // 检查 short_id 是否已经存在
+      if (!dayObj.log_list.some(item => item.short_id === log.commit.short_id)) {
+        dayObj.log_list.push(log.commit);  // 添加到数组末尾
+      }
     });
 
     // 对年份进行倒序排序

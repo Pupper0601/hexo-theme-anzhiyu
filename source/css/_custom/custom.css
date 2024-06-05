@@ -483,3 +483,27 @@
 #update-log .timeline-item .timeline-item-content a:hover {
 	color: #eaeffe !important;
 }
+
+#update-log li i {
+	opacity: 0;
+}
+
+#update-log li:hover > i {
+	opacity: 1;
+	font-size: 13px;
+	color: #cccaca;
+	letter-spacing: 3px;
+	font-family: "FontAwesome";
+	font-weight: 700;
+	margin-left: 10px;
+	position: absolute;
+	right: 124px;
+	top: 14px;
+}
+
+#update-log li > i:before {
+	position: absolute;
+	right: -34px;
+	font-size: 18px;
+	top: -2px;
+}

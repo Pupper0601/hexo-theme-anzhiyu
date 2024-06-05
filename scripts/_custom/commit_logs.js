@@ -39,7 +39,7 @@ async function updateLogs() {
           short_id,
           id,
           url: `https://github.com/${create}/commit/${id}`,
-          update: date.split(' ')[1]
+          time: date.split(' ')[1]
         }
       };
     }).sort((a, b) => {

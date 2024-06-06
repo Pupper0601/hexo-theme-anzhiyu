@@ -2,19 +2,20 @@
   #update-log.timeline.red
     if site.data.updates 
       each item in site.data.updates 
-        .timeline-item 
-          .timeline-item-title
-            .item-circle
-              p=item.year
-          each day in item.day_list
+        if item.year
+          .timeline-item 
             .timeline-item-title
               .item-circle
-                p=day.day
-            .timeline-item-content
-                ol 
-                  each log in day.log_list
-                    li=log.content
-                      - var time = log.time.split(' ')[1]
-                      i.fa-solid.fa-code-commit=time
-                      a(href=log.url, style="position: absolute; right: 10px;")=log.short_id
+                p=item.year
+            each day in item.day_list
+              .timeline-item-title
+                .item-circle
+                  p=day.day
+              .timeline-item-content
+                  ol 
+                    each log in day.log_list
+                      li=log.content
+                        - var time = log.time.split(' ')[1]
+                        i.fa-solid.fa-code-commit=time
+                        a(href=log.url, style="position: absolute; right: 10px;")=log.short_id
 

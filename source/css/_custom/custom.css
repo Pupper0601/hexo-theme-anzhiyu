@@ -372,6 +372,8 @@
 	/* font-family: 'anzhiyufont'; */
 	text-overflow: ellipsis;
 	font-weight: 900;
+	z-index: 1;
+	text-align: center;
 }
 
 /* 首页个人卡片 */

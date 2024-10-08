@@ -6,12 +6,9 @@ const blacklist = ["友站名称1", "友站名称2", "友站名称3"]; // 由于
 let friends = [],
   data_f = YML.parse(fs.readFileSync('source/_data/link.yml').toString().replace(/(?<=rss:)\s*\n/g, ' ""\n'));
 
-data_f.forEach((entry, index) => {
-  let lastIndex = 2;
-  if (index < lastIndex) {
-    const filteredLinkList = entry.link_list.filter(linkItem => !blacklist.includes(linkItem.name));
-    friends = friends.concat(filteredLinkList);
-  }
+data_f.forEach((entry) => {
+  const filteredLinkList = entry.link_list.filter(linkItem => !blacklist.includes(linkItem.name));
+  friends = friends.concat(filteredLinkList);
 });
 
 // 根据规定的格式构建 JSON 数据

@@ -1,6 +1,6 @@
 menu:
   文章:
-    隧道: /archives/ || anzhiyu-icon-box-archive
+    总览: /archives/ || anzhiyu-icon-box-archive
     分类: /categories/ || anzhiyu-icon-shapes
     标签: /tags/ || anzhiyu-icon-tags
 
@@ -21,7 +21,8 @@ menu:
   关于:
     关于本人: /about/ || anzhiyu-icon-paper-plane
     闲言碎语: /essay/ || anzhiyu-icon-lightbulb
-    更新日记: /updates/ || anzhiyu-icon-bolt
+    日志: /updates/ || anzhiyu-icon-bolt
+    统计: /charts/ || anzhiyu-icon-chart-line
 
 # nav相关配置
 nav:

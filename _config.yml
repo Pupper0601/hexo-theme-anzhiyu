@@ -606,6 +606,7 @@ footer:
       #   text: 图床
       - link: https://beian.miit.gov.cn/
         text: 浙ICP备2023002966号-1
+
     subTitle:
       enable: true
       # Typewriter Effect (打字效果)
@@ -1085,8 +1086,8 @@ instantpage: false
 # https://github.com/vinta/pangu.js
 # 中英文之间添加空格
 pangu:
-  enable: true
-  field: site # site/post
+  enable: false
+  field: post # site/post
 
 # Lazyload (图片懒加载)
 # https://github.com/verlok/vanilla-lazyload

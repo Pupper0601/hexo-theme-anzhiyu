@@ -1265,7 +1265,7 @@ greetingBox:
 # 文章顶部ai摘要
 # https://summary.zhheo.com/admin
 post_head_ai_description:
-  enable: true
+  enable: false
   gptName: pupper
   mode: tianli # 默认模式 可选值: tianli/local
   switchBtn: false # 可以配置是否显示切换按钮 以切换tianli/local

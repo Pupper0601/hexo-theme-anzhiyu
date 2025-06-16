@@ -42,7 +42,7 @@ if hexo-config('ai_summary.enable')
     flex-direction column
     margin-bottom 30px
     display flex
-    gap 12px
+    gap 2px
     position relative
     border 1px solid #ccc
 
@@ -68,16 +68,16 @@ if hexo-config('ai_summary.enable')
       height: 100%;
       z-index: 2;
       border-radius: 12px;
-      background: var(--liushen-maskbg);
+      background: var(--anzhiyu-background);
 
     .ai-explanation
       z-index 10
       padding 8px 12px
       font-size 15px
-      line-height 1.4
+      line-height 1.5
       color var(--liushen-text)
       text-align justify
-      letter-spacing 1.5px
+      letter-spacing 2px
 
       // ✅ 打字机光标动画
       &::after
@@ -126,7 +126,8 @@ if hexo-config('ai_summary.enable')
         .ai-title-text
           font-weight 900
           color var(--anzhiyu-lighttext)
-          letter-spacing: 1.5px;
+          // letter-spacing: 1.5px;
+          font-size 12px
 
       .ai-tag
         color var(--liushen-secondtext)
@@ -152,3 +153,40 @@ if hexo-config('ai_summary.enable')
       opacity 1
     50%
       opacity 0
+
+.ai-summary
+  .ai-head
+    z-index 10
+    display flex
+    align-items center
+    justify-content space-between
+    margin 8px 12px 4px 12px
+    .ai-head-left
+      display: flex
+      align-items: center
+      .ai-circle
+        width: 16px
+        height: 16px
+        border-radius: 50%
+        margin-right: 8px
+      .ai-circle-1
+        background-color: #fc625d
+      .ai-circle-2
+        background-color: #fdbc40
+      .ai-circle-3
+        background-color: #35cd4b
+    .ai-head-right
+      display: flex
+      align-items: center
+      font-size: 14px
+      height 20px
+      background-color: var(--anzhiyu-lighttext)
+      padding: 0px 12px
+      border-radius: 100px
+      a  
+        color: #fff !important;
+        font-size: 12px;
+        text-decoration: none !important;
+        top: 1px;
+        position: relative;
+        padding: 0px 5px !important;

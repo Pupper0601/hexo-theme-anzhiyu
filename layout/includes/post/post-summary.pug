@@ -1,4 +1,12 @@
 .ai-summary
+    .ai-head 
+        .ai-head-left 
+            .ai-circle.ai-circle-1
+            .ai-circle.ai-circle-2
+            .ai-circle.ai-circle-3 
+        .ai-head-right 
+            a(href=url_for(theme.ai_summary.modelUrl) target="_blank" title=theme.ai_summary.modelName class="ai-about-ai") 关于 AI
+
     .ai-explanation(style="display: block;" data-summary=page.summary)=theme.ai_summary.loadingText
     .ai-title 
         .ai-title-left 

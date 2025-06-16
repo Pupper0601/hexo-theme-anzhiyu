@@ -1,11 +1,11 @@
 #article-container .tag-Link {
-	background: var(--anzhiyu-secondbg);
+	background: var(--anzhiyu-background);
 	border-radius: 8px !important;
 	display: flex;
 	border: var(--style-border);
 	flex-direction: column;
 	padding: 0.5rem 1rem !important;
-	border-width: 1px !important;
+	border: 1px solid #cbcaca;
 	margin: 1rem 0;
 }
 
@@ -17,7 +17,7 @@
 	border-bottom: 1px solid #918e8e;
 	padding-bottom: 4px;
 	font-size: 12px;
-	color: var(--anzhiyu-gray);
+	color: #5f5d5d;
 	font-weight: normal;
 }
 

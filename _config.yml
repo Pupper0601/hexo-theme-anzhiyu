@@ -886,7 +886,7 @@ aside:
 
   card_announcement: # 公告（欢迎信息）
     enable: true
-    content: '<img src="https://dayu.qqsuu.cn/moyuribao/apis.php" alt="avatar">'
+    content: 
   card_weixin:
     enable: false
     face: https://bu.dusays.com/2023/01/13/63c02edf44033.png

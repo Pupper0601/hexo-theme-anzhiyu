@@ -216,7 +216,7 @@ wordcount:
   enable: true
   post_wordcount: true
   min2read: true
-  total_wordcount: true
+  total_wordcount: false # 是否显示总字数
 
 # Display the article introduction on homepage
 # 1: description
@@ -919,7 +919,7 @@ aside:
   card_webinfo:
     enable: true
     post_count: true
-    last_push_date: true
+    last_push_date: false
     sort_order: # Don't modify the setting unless you know how it works
 
 # busuanzi count for PV / UV in site

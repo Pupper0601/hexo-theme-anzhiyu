@@ -567,9 +567,10 @@
 	font-weight: bold;
 	font-style: italic;
 	white-space: nowrap;
-	span {
-		font-size: 0.8rem;
-		font-weight: bold;
-		color: var(--anzhiyu-main);
-	}
+}
+
+#welcome-info .box-desc span {
+	font-size: 0.8rem;
+	font-weight: bold;
+	color: var(--anzhiyu-main);
 }

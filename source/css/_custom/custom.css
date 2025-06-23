@@ -539,6 +539,7 @@
 #welcome-info {
 	border-radius: 18px;
 	padding: 20px;
+	font-style: italic;
 }
 [data-theme="dark"] #welcome-info {
 	background: #212121;
@@ -557,10 +558,20 @@
 	color: var(--anzhiyu-main);
 }
 
+#welcome-info .box-ip {
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
 #welcome-info .box-ip span {
 	font-size: 1.2rem;
 	font-weight: bold;
 	color: var(--anzhiyu-main);
+	filter: blur(6px);
+}
+
+#welcome-info .box-ip span:hover {
+	filter: none;
 }
 
 #welcome-info .box-desc {

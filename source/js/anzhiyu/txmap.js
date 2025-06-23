@@ -224,10 +224,10 @@ function showWelcome() {
         </div>
         <div class="box-content">
           <div class=content-avatar>
-            欢迎来自 <span>${pos}</span> 的小伙🤹
+            🎊 欢迎 <span>${pos}</span> 的小伙伴🤹
           </div>
           <div class="content-distance">
-            🫟: 您当前距离站长约 <span>${dist}</span> 公里.
+            🫟: 您距离站长约 <span>${dist}</span> 公里.
           </div>
           <div class="content-time">
             <span>${timeChange}</span>

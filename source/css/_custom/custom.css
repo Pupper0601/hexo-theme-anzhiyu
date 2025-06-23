@@ -533,3 +533,43 @@
 	margin: 0 auto;
 	display: block;
 }
+
+/* 公告栏样式 */
+/* 欢迎信息 */
+#welcome-info {
+	border-radius: 18px;
+	padding: 20px;
+}
+[data-theme="dark"] #welcome-info {
+	background: #212121;
+}
+
+#welcome-info .welcome-box .box-title {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: var(--anzhiyu-main);
+}
+
+#welcome-info .content-avatar span,
+#welcome-info .content-distance span {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: var(--anzhiyu-main);
+}
+
+#welcome-info .box-ip span {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: var(--anzhiyu-main);
+}
+
+#welcome-info .box-desc {
+	font-weight: bold;
+	font-style: italic;
+	white-space: nowrap;
+	span {
+		font-size: 0.8rem;
+		font-weight: bold;
+		color: var(--anzhiyu-main);
+	}
+}

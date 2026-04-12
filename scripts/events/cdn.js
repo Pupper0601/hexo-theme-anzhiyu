@@ -9,8 +9,15 @@ const { version } = require("../../package.json");
 const path = require("path");
 
 hexo.extend.filter.register("before_generate", () => {
-  const themeConfig = hexo.theme.config;
-  const { CDN } = themeConfig;
+  const themeConfig = hexo.theme.config || {};
+  const CDN = themeConfig.CDN || {
+    internal_provider: "local",
+    third_party_provider: "cbd",
+    version: true,
+    custom_format: null,
+    option: null,
+  };
+  themeConfig.CDN = CDN;
 
   const thirdPartySrc = hexo.render.renderSync({ path: path.join(hexo.theme_dir, "/plugins.yml"), engine: "yaml" });
   const internalSrc = {

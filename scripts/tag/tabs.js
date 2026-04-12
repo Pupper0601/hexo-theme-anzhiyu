@@ -6,10 +6,28 @@
 
 'use strict'
 
+let uniqueTabBlockCount = 0
+const usedTabBlockNames = new Map()
+
+const generateUniqueTabBlockName = rawName => {
+  let name = typeof rawName === 'string' ? rawName.trim() : ''
+  if (!name) {
+    name = `tab-block-${++uniqueTabBlockCount}`
+  }
+
+  const key = name.toLowerCase()
+  const count = usedTabBlockNames.get(key) || 0
+  if (count > 0) {
+    name = `${name}-${count + 1}`
+  }
+  usedTabBlockNames.set(key, count + 1)
+  return name
+}
+
 const postTabs = (args, content) => {
   const tabBlock = /<!--\s*tab (.*?)\s*-->\n([\w\W\s\S]*?)<!--\s*endtab\s*-->/g
   args = args.join(' ').split(',')
-  const tabName = args[0]
+  const tabName = generateUniqueTabBlockName(args[0])
   const tabActive = Number(args[1]) || 0
   const matches = []
   let match
@@ -17,8 +35,6 @@ const postTabs = (args, content) => {
   let tabNav = ''
   let tabContent = ''
   let noDefault = true
-
-  !tabName && hexo.log.warn('Tabs block must have unique name!')
 
   while ((match = tabBlock.exec(content)) !== null) {
     matches.push(match[1], match[2])

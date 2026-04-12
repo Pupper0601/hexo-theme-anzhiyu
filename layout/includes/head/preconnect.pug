@@ -1,5 +1,10 @@
 -
-  const { internal_provider, third_party_provider, custom_format } = theme.CDN
+  const themeCDN = typeof theme !== 'undefined' && theme && theme.CDN ? theme.CDN : {}
+  const {
+    internal_provider = 'local',
+    third_party_provider = 'cbd',
+    custom_format = ''
+  } = themeCDN
   const providers = {
     'jsdelivr': '//cdn.jsdelivr.net',
     'cdnjs': '//cdnjs.cloudflare.com',

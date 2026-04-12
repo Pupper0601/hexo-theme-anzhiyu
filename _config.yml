@@ -97,7 +97,6 @@ author_status:
     # - 💢 壮汉人狠话不多
 
 # search (搜索)
-# see https://blog.anheyu.com/posts/c27d.html#搜索系统
 # --------------------------------------
 
 # Algolia search
@@ -211,7 +210,6 @@ mainTone:
   cover_change: true # 整篇文章跟随cover修改主色调
 
 # wordcount (字数统计)
-# see https://blog.anheyu.com/posts/c27d.html#字数统计
 wordcount:
   enable: true
   post_wordcount: true
@@ -380,7 +378,7 @@ valine:
 # https://waline.js.org/
 waline:
   serverURL: # Waline server address url
-  bg: # waline background
+  bg: # Waline background
   pageview: false
   meta: false # 归属地, 操作系统 前是否显示图标
   imageUploader: true # 是否启用图片上传功能，默认开启，限制为 128kb 的 base64 图片
@@ -460,6 +458,21 @@ artalk:
   visitor: false
   option:
 
+# giscus
+# https://giscus.app/
+giscus:
+  repo: # GitHub repository name
+  repo_id: # GitHub repository id
+  category_id: # GitHub repository category id
+  theme:
+    light: light
+    dark: dark
+  option: # options
+    data-lang: zh-CN
+    data-mapping:
+    data-category:
+    data-input-position:
+
 # Chat Services
 # --------------------------------------
 
@@ -516,7 +529,7 @@ footer:
       - link: https://hexo.io/ #徽标指向网站链接
         shields: https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg #徽标API
         message: 博客框架为Hexo_v5.4.0 #徽标提示语
-      - link: https://anheyu.com/
+      - link: https://hexo.anheyu.com/
         shields: https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg
         message: 本站使用AnZhiYu主题
       - link: https://github.com/
@@ -1187,6 +1200,17 @@ LA:
   ck: JxRzskTKmcCTVaXY
   LingQueMonitorID: KCCFZ6daRPcemG6h
 
+# Umami 统计配置（关于页面访问统计卡片）
+# 文档: https://umami.is/docs/api
+umami:
+  enable: false
+  # Umami API 地址，如 https://analytics.example.com
+  apiHost:
+  # 网站 ID
+  websiteId:
+  # API Token（在 Umami 后台 Settings -> API Keys 中生成）
+  token:
+
 # 标签卖萌
 diytitle:
   enable: true
@@ -1308,7 +1332,7 @@ rightClickMenu:
 # 首页随便逛逛people模式 而非技能点模式，关闭后为技能点模式需要配置creativity.yml
 peoplecanvas:
   enable: false
-  img: https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png
+  img: https://upload-bbs.miyoushe.com/upload/2024/07/27/125766904/ba62475f396df9de3316a08ed9e65d86_5680958632268053399..png
 
 # 动效
 dynamicEffect:
@@ -1411,3 +1435,4 @@ CDN:
     # waterfall:
     # ali_iconfont_css:
     # accesskey_js:
+    # colorthief:

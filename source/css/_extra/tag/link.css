@@ -33,15 +33,22 @@
 }
 
 #article-container .tag-Link .tag-link-bottom .tag-link-left {
-	width: 60px;
-	min-width: 60px;
-	height: 60px;
-	background-size: cover;
-	border-radius: var(--anzhiyu-border-radius);
-	background-color: var(--anzhiyu-card-bg);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  width: 60px;
+  min-width: 60px;
+  height: 60px;
+  background-size: cover;
+  border-radius: var(--anzhiyu-border-radius);
+  background-color: var(--anzhiyu-card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+#article-container .tag-Link .tag-link-bottom .tag-link-left .tag-link-favicon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 4px;
 }
 #article-container .tag-Link .tag-link-bottom .tag-link-left i {
 	margin: 0;

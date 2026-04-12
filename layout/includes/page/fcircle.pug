@@ -24,21 +24,21 @@ if theme.friends_lite.enable
   .fcircle_page
     .author-content.author-content-item.fcirclePage.single(style=`background: url(${theme.friends_lite.top_background}) center / cover no-repeat !important;`)
       .card-content
-        .author-content-item-tips 朋友圈
-        span.author-content-item-title 最新文章订阅
+        .author-content-item-tips=_p('flink.friend_links')
+        span.author-content-item-title=_p('flink.latest_articles')
         .content-bottom
           .tips= theme.friends_lite.top_tips
         .banner-button-group
           a.banner-button(onclick='pjax.loadUrl("/about")')
             i.anzhiyufont.anzhiyu-icon-arrow-circle-right(style='font-size: 22px; margin-right: 0.25rem')
-            span.banner-button-text 关于本人
+            span.banner-button-text=_p('flink.about_me')
     .title-h2-a
       .title-h2-a-left
-        h2(style='padding-top:0;margin:.6rem 0 .6rem') 🎣 钓鱼
+        h2(style='padding-top:0;margin:.6rem 0 .6rem')=_p('flink.fishing')
         a.random-post-start(href='javascript:fetchRandomPost();')
           i.anzhiyufont.anzhiyu-icon-arrow-rotate-right
       .title-h2-a-right
-        a.random-post-all(href='/link/') 全部友链
+        a.random-post-all(href='/link/')=_p('flink.all_links')
     #random-post
     .title-h2-a
       .title-h2-a-left

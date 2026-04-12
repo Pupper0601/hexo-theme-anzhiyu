@@ -1,83 +1,69 @@
+const urlFor = require("hexo-util").url_for.bind(hexo);
+
 function link(args) {
-  args = args.join(' ').split(',');
-  let title = args[0];
-  let sitename = args[1];
-  let link = args[2];
+  args = args.join(" ").split(",");
+  let title = args[0] || "";
+  let sitename = args[1] || "";
+  let link = args[2] || "";
+  let imgUrl = args[3] || "";
 
-  // 定义不同域名对应的头像URL
-  const avatarUrls = {
-    'github.com': 'http://img.pupper.cn/img/1750061468413.webp',
-    'csdn.net': 'http://img.pupper.cn/img/1750064632094.png',
-    'gitee.com': 'http://img.pupper.cn/img/1750061507144.webp',
-    'zhihu.com': 'http://img.pupper.cn/img/1750061529732.webp',
-    'baidu.com': 'http://img.pupper.cn/img/1750064707512.ico',
-    'pupper.cn': 'http://img.pupper.cn/img/1750061770797.png',
-  };
+  title = title.trim();
+  sitename = sitename.trim();
+  link = link.trim();
+  imgUrl = imgUrl.trim();
 
-  // 定义白名单域名
-  const whitelistDomains = [
-    'pupper.cn'
-  ];
+  // 判断是否为站内地址：相对路径（以 / 开头但不是 //）或者明确指定 imgUrl 为 "true"
+  const isRelativePath = link.startsWith("/") && !link.startsWith("//");
+  const isExplicitInside = imgUrl === "true";
+  const InsideStation = isRelativePath || isExplicitInside;
 
-  // 获取URL的根域名
-  function getRootDomain(url) {
+  // 获取主题配置的 favicon
+  const favicon = hexo.theme.config.favicon || "/favicon.ico";
+
+  // 图标逻辑：
+  // 1. 有明确指定图标（非 "true"）时使用指定图标
+  // 2. 站内地址使用主题 favicon
+  // 3. 站外地址尝试获取对方网站 favicon
+  let iconUrl = "";
+  let useAutoFavicon = false;
+
+  if (imgUrl && imgUrl !== "true") {
+    // 用户指定了图标
+    iconUrl = imgUrl;
+  } else if (InsideStation) {
+    // 站内地址使用主题 favicon
+    iconUrl = favicon;
+  } else {
+    // 站外地址自动获取 favicon
+    useAutoFavicon = true;
     try {
-      // 检查URL是否有效
-      if (!url || !url.match(/^https?:\/\//)) {
-        return 'invalid.url';
-      }
-      const hostname = new URL(url).hostname;
-      const domainParts = hostname.split('.').reverse();
-      if (domainParts.length > 1) {
-        return domainParts[1] + '.' + domainParts[0];
-      }
-      return hostname;
+      const urlObj = new URL(link);
+      iconUrl = `${urlObj.origin}/favicon.ico`;
     } catch (e) {
-      return 'invalid.url';
+      // URL 解析失败，不设置图标
+      iconUrl = "";
     }
   }
 
-  // 根据URL获取对应的头像URL
-  function getAvatarUrl(url) {
-    const rootDomain = getRootDomain(url);
-    for (const domain in avatarUrls) {
-      if (domain.endsWith(rootDomain)) {
-        return avatarUrls[domain];
-      }
-    }
-    return 'https://img.pupper.cn/img/1710229767.gif';  // 默认头像URL
-  }
+  const hasIcon = iconUrl || useAutoFavicon;
+  const targetAttr = InsideStation ? "" : 'target="_blank" rel="noopener external nofollow noreferrer"';
 
-  // 检查是否在白名单中
-  function isWhitelisted(url) {
-    const rootDomain = getRootDomain(url);
-    for (const domain of whitelistDomains) {
-      if (rootDomain.endsWith(domain)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  // 获取对应的头像URL
-  let imgUrl = getAvatarUrl(link);
-
-  // 判断并生成提示信息
-  let tipMessage = isWhitelisted(link)
-    ? "✅来自本站，本站可确保其安全性，请放心点击跳转"
-    : "🙄引用站外地址，不保证站点的可用性和安全性";
-
-  return `<div class='liushen-tag-link'><a class="tag-Link" target="_blank" href="${link}">
-  <div class="tag-link-tips">${tipMessage}</div>
-  <div class="tag-link-bottom">
-      <div class="tag-link-left" style="background-image: url(${imgUrl});"></div>
-      <div class="tag-link-right">
-          <div class="tag-link-title">${title}</div>
-          <div class="tag-link-sitename">${sitename}</div>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-  </div>
-  </a></div>`;
+  return `<div class='anzhiyu-tag-link'><a class="tag-Link" ${targetAttr} href="${urlFor(link)}">
+    <div class="tag-link-tips">${InsideStation ? "✅来自本站，本站可确保其安全性，请放心点击跳转" : "🙄引用站外地址，不保证站点的可用性和安全性"}</div>
+    <div class="tag-link-bottom">
+        <div class="tag-link-left"${hasIcon ? ` data-icon="${iconUrl}"` : ""}>
+          <img class="tag-link-favicon" src="${iconUrl}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="${
+    hasIcon ? "" : "display:none"
+  }" alt="favicon"/>
+          <i class="anzhiyufont anzhiyu-icon-link" style="${hasIcon ? "display:none" : "display:flex"}"></i>
+        </div>
+        <div class="tag-link-right">
+            <div class="tag-link-title">${title}</div>
+            <div class="tag-link-sitename">${sitename}</div>
+        </div>
+        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>
+    </div>
+    </a></div>`;
 }
 
 hexo.extend.tag.register('link', link, { ends: false });

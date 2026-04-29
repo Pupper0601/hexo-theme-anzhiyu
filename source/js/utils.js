@@ -208,7 +208,7 @@ const anzhiyu = {
         }
       });
 
-      if (!window.fancyboxRun) {
+      if (!window.fancyboxRun && typeof Fancybox !== 'undefined') {
         Fancybox.bind("[data-fancybox]", {
           Hash: false,
           Thumbs: {

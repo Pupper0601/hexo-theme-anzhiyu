@@ -1347,8 +1347,8 @@ inject:
   head:
     # - <script defer src="/js/update_commit.js"></script>
   bottom:
-    # 音乐馆
-    - <script defer src="/js/Meting2.min.js"></script>
+    # 音乐馆 (已由 aplayer.pug 自动加载，无需重复引入)
+    # - <script defer src="/js/Meting2.min.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work

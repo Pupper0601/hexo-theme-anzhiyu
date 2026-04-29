@@ -1184,7 +1184,7 @@ friends_vip:
 
 # 黑色模式粒子效果canvas
 universe:
-  enable: true
+  enable: false
 
 # 页面卡片顶部气泡升起效果
 bubble:

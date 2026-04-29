@@ -151,7 +151,7 @@ favicon: /img/siteicon/favicon.ico
 
 # Avatar (头像)
 avatar:
-  img: http://img.pupper.cn/img/202307151348675.png
+  img: https://img.pupper.cn/img/202307151348675.png
   effect: false
 
 # Disable all banner image
@@ -1371,6 +1371,7 @@ CDN:
   custom_format: https://npm.elemecdn.com/${name}@latest/${file}
 
   option:
+    lazyload: /js/lazyload.min.js
     # main_css:
     # main:
     # utils:

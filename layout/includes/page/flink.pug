@@ -45,6 +45,14 @@
       .title-h2-a-right
         a.random-post-all.no-text-decoration(href='/link/')=_p('flink.all_links')
     #random-post
+    script.
+      if (typeof UserConfig === 'undefined') {
+        var UserConfig = {
+          private_api_url: '#{theme.friends_lite.private_api_url}',
+          page_turning_number: #{theme.friends_lite.page_turning_number},
+          error_img: '#{theme.friends_lite.error_img}',
+        }
+      }
     script(defer data-pjax src=url_for(theme.asset.random_friends_post_js))
   
   .flink

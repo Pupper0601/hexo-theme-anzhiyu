@@ -25,7 +25,7 @@ mixin postUI(posts)
             .post-cover-glass
               .post-cover-glass-bg(
                 class=mainColor ? '' : 'post-cover-glass-random'
-                style=mainColor ? `background: linear-gradient(135deg, ${mainColor}, ${mainColor}cc, #0f0f2e)` : ''
+                style=mainColor ? `background: linear-gradient(135deg, ${mainColor}, ${mainColor}b3)` : ''
               )
                 span.post-cover-bg-text= coverTag
               .post-cover-glass-image
@@ -33,6 +33,7 @@ mixin postUI(posts)
                   src=url_for(post_cover)
                   alt=title
                   onerror=`this.onerror=null;this.src='`+ url_for(theme.error_img.post_page) + `'`
+                  style=mainColor ? `background: linear-gradient(135deg, ${mainColor}, ${mainColor}b3)` : ''
                 )
       .recent-post-info(class=no_cover)
         .recent-post-info-top

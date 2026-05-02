@@ -20,7 +20,7 @@
 #recent-posts > .recent-post-item:not(a)::before {
 	content: "";
 	position: absolute;
-	top: -230px;
+	top: -270px;
 	left: -300px;
 	width: 30%;
 	height: 170%;
@@ -326,54 +326,126 @@
 	background-size: contain;
 }
 
-/* 首页图片样式 */
+/* 首页图片样式 - visionOS 毛玻璃风格 */
 #recent-posts .post_cover a {
+	display: flex;
+	height: 100%;
 	justify-content: center;
 	align-items: center;
 }
 
-#recent-posts .post_cover .post_bg_top {
-	position: absolute;
-	height: 50%;
-	opacity: 0.8;
-	mask: -webkit-radial-gradient(
-		closest-side circle,
-		#fff 20%,
-		transparent 100%
-	);
-	mask: radial-gradient(closest-side circle, #fff 20%, transparent 100%);
+.post-cover-glass {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
 }
 
-#recent-posts .post_cover .post_bg {
-	filter: blur(25px);
-}
-
-#recent-posts .post_cover .article-categories-original {
+/* 背景渐变层 - 支持 JS 随机渐变 + CSS mesh 叠加 */
+.post-cover-glass-bg {
 	position: absolute;
 	top: 0;
-	right: 0;
-	background: #fff;
-	border-radius: 0 11px 0 12px;
-	padding: 4px 8px;
-	background-color: var(--anzhiyu-theme);
-	color: var(--anzhiyu-white);
-	font-size: 12px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-#recent-posts .post_cover .post_title {
+.post-cover-glass-random {
+	background: linear-gradient(135deg, #0f0c29 0%, #1a1040 50%, #24243e 100%);
+}
+
+/* Aurora mesh 叠加层 - 模拟 visionOS 风格不规则光晕 */
+.post-cover-glass-bg::before {
+	content: '';
 	position: absolute;
-	font-size: 2rem;
-	color: #fff;
-	/* padding: 30px; */
-	width: 88%;
-	/* margin: 30px; */
-	overflow: hidden;
-	white-space: nowrap;
-	/* font-family: 'anzhiyufont'; */
-	text-overflow: ellipsis;
-	font-weight: 900;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:
+		radial-gradient(ellipse at 25% 30%, rgba(140, 160, 255, 0.10) 0%, transparent 55%),
+		radial-gradient(ellipse at 70% 20%, rgba(200, 170, 255, 0.07) 0%, transparent 45%),
+		radial-gradient(ellipse at 50% 80%, rgba(100, 200, 255, 0.05) 0%, transparent 50%),
+		radial-gradient(ellipse at 10% 70%, rgba(180, 140, 255, 0.06) 0%, transparent 40%);
+	pointer-events: none;
 	z-index: 1;
-	text-align: center;
+}
+
+/* 背景文字 - 按主题模式自适应 */
+.post-cover-bg-text {
+	position: absolute;
+	font-size: 6rem;
+	font-weight: 900;
+	color: rgba(0, 0, 0, 0.06);
+	z-index: 2;
+	user-select: none;
+	letter-spacing: 8px;
+	line-height: 1;
+	pointer-events: none;
+	white-space: nowrap;
+}
+
+[data-theme="dark"] .post-cover-bg-text {
+	color: rgba(255, 255, 255, 0.07);
+}
+
+/* 毛玻璃图片容器 - visionOS 风格 */
+.post-cover-glass-image {
+	position: relative;
+	z-index: 3;
+	width: 50%;
+	max-width: 130px;
+	aspect-ratio: 1;
+	border-radius: 28px;
+	padding: 3px;
+	background: rgba(10, 18, 40, 0.45);
+	backdrop-filter: blur(30px) saturate(1.3);
+	-webkit-backdrop-filter: blur(30px) saturate(1.3);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	box-shadow:
+		0 2px 8px rgba(0, 0, 0, 0.08),
+		0 8px 24px rgba(0, 0, 0, 0.06),
+		0 0 0 1px rgba(255, 255, 255, 0.10) inset;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.35s ease-in-out;
+}
+
+/* 白天模式玻璃更透亮 */
+[data-theme="light"] .post-cover-glass-image {
+	background: rgba(255, 255, 255, 0.30);
+	border-color: rgba(255, 255, 255, 0.35);
+	box-shadow:
+		0 2px 8px rgba(0, 0, 0, 0.04),
+		0 8px 24px rgba(0, 0, 0, 0.03),
+		0 0 0 1px rgba(255, 255, 255, 0.25) inset;
+}
+
+/* 暗色模式玻璃更深邃 */
+[data-theme="dark"] .post-cover-glass-image {
+	background: rgba(10, 18, 40, 0.55);
+	border-color: rgba(255, 255, 255, 0.12);
+	box-shadow:
+		0 2px 8px rgba(0, 0, 0, 0.15),
+		0 12px 32px rgba(0, 0, 0, 0.12),
+		0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+}
+
+.post-cover-glass-image .post-cover-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 25px;
+	position: relative;
+	z-index: 1;
 }
 
 /* 首页个人卡片 */

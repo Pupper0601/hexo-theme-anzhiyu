@@ -1223,6 +1223,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  // 首页文章毛玻璃随机渐变背景
+  const initPostCoverGlass = () => {
+    const glassBgs = document.querySelectorAll('.post-cover-glass-bg.post-cover-glass-random');
+    const gradients = [
+      'linear-gradient(135deg, #0f0c29, #1a1040, #24243e)',  // 暗夜星空
+      'linear-gradient(135deg, #0d1b2a, #1b2d45, #1a1a2e)',  // 深海之夜
+      'linear-gradient(135deg, #1a0a2e, #16213e, #0f3460)',  // 极光幻境
+      'linear-gradient(135deg, #0a0a23, #12123a, #1a1a3e)',  // 月夜苍穹
+      'linear-gradient(135deg, #100a20, #1a1530, #151a30)',  // 暮色深空
+      'linear-gradient(135deg, #0c1828, #142038, #1a1a2e)',  // 山色空蒙
+      'linear-gradient(135deg, #120a1e, #1c1535, #162040)',  // 紫夜流光
+      'linear-gradient(135deg, #080820, #101838, #0d2540)',  // 碧落深海
+      'linear-gradient(135deg, #141028, #1a1838, #101c30)',  // 烟雨暮色
+      'linear-gradient(135deg, #0e0e1e, #181830, #1a1a34)',  // 墨色山川
+      'linear-gradient(135deg, #16102a, #1c1a3a, #121c34)',  // 星河沉璧
+      'linear-gradient(135deg, #0a1220, #141e30, #1a1a30)',  // 雪落无声
+    ];
+    glassBgs.forEach(el => {
+      const randomIndex = Math.floor(Math.random() * gradients.length);
+      el.style.background = gradients[randomIndex];
+    });
+  };
+
   //封面纯色
   const coverColor = async () => {
     const root = document.querySelector(":root");
@@ -1816,6 +1839,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.getElementById("post-comment")) owoBig();
 
     mouseleaveHomeCard();
+    initPostCoverGlass();
     coverColor();
     listenToPageInputPress();
     openMobileMenu();

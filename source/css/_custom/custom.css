@@ -588,7 +588,8 @@
 	margin-left: 10px;
 	position: absolute;
 	right: 124px;
-	top: 14px;
+	bottom: 14px;
+	width: auto;
 }
 
 #update-log li > i:before {
